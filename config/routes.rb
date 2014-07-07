@@ -2,8 +2,9 @@ Beeronrails::Application.routes.draw do
   get "beer/index"
 
   resources :beers
+  resources :breweries
 
-  root :to => "beer#index"
+  root :to => "beers#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

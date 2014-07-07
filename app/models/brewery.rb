@@ -1,3 +1,4 @@
 class Brewery < ActiveRecord::Base
-  attr_accessible :nazwa
+  attr_accessor :beer_count
+  attr_accessible :nazwa, :beer_count
 end

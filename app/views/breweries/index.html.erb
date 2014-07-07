@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>All breweries listing</h1>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th>Brewery name</th>
+    <th>Beer count</th>
+  </tr>
+ 
+  <% @breweries.each do |brewery| %>
+    <tr>
+      <td><%= link_to brewery.nazwa, brewery_path(brewery) %></td>
+      <td><%= brewery.beer_count %></td>
+    </tr>
+  <% end %>
+</table>
