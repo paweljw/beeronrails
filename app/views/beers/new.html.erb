@@ -1,0 +1,32 @@
+<h1>Nowe piwo</h1>
+
+<%= form_for :beer, url: beers_path do |f| %>
+	<p>
+	<%= f.label :nazwa %><br/>
+	<%= f.text_field :nazwa %>
+	</p>
+
+	<p>
+	<%= f.label :browar %><br/>
+	<%= f.text_field :browar %>
+	</p>
+
+	<p>
+	<%= f.label :foto %><br/>
+	<%= f.text_field :foto %>
+	</p>
+
+	<p>
+	<%= f.label :kraj %><br/>
+	<%= f.text_field :kraj %>
+	</p>
+
+	<p>
+	<%= f.label :komentarz %><br/>
+	<%= f.text_area :komentarz %>
+	</p>
+
+	<p>
+    <%= f.submit %>
+  </p>
+<% end %>

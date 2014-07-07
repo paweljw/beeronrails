@@ -1,7 +1,6 @@
 Beeronrails::Application.routes.draw do
   get "beer/index"
 
-  resources :breweries
   resources :beers
 
   root :to => "beer#index"

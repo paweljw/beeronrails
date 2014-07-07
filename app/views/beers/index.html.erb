@@ -1,0 +1,15 @@
+<h1>Wyświetlanie wszystkich piw</h1>
+ 
+<table class="table table-striped">
+  <tr>
+    <th>Piwo</th>
+    <th>Browar</th>
+  </tr>
+ 
+  <% @beers.each do |beer| %>
+    <tr>
+      <td><%= beer.nazwa %></td>
+      <td><%= beer.browar %></td>
+    </tr>
+  <% end %>
+</table>
