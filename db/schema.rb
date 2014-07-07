@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140707120115) do
+ActiveRecord::Schema.define(:version => 20140707130811) do
 
   create_table "beers", :force => true do |t|
     t.string   "nazwa"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140707120115) do
     t.text     "komentarz"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "barcode"
   end
 
 end
