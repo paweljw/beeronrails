@@ -1,3 +1,5 @@
+require "ffi-icu"
+
 class BeersController < ApplicationController
 	def new
 		@beer = Beer.new
@@ -15,10 +17,23 @@ class BeersController < ApplicationController
 
 	def show
   		@beer = Beer.find(params[:id])
+
+  		@brewery = Brewery.find(@beer.brewery_id).first
+  		@beer.brewery_name = @brewery.nazwa
 	end
 
 	def index
 		@beers = Beer.all
+
+		@beers.each { |beer| 
+
+		  		brewery = Brewery.find(beer.brewery_id)
+  				beer.brewery_name = brewery.nazwa
+  			}
+
+		collator = ICU::Collation::Collator.new("pl_PL")
+
+  		@beers = @beers.sort! { |a, b| collator.compare(a.brewery_name, b.brewery_name)}
 	end
 
 	private

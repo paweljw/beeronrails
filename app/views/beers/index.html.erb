@@ -10,8 +10,8 @@
  
   <% @beers.each do |beer| %>
     <tr>
-      <td><%= beer.nazwa %></td>
-      <td><%= beer.brewery_id %></td>
+      <td><%= link_to beer.nazwa, beer_path(beer) %></td>
+      <td><%= beer.brewery_name %></td>
     </tr>
   <% end %>
 </table>
