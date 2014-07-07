@@ -1,15 +1,17 @@
-<h1>Wyświetlanie wszystkich piw</h1>
- 
+<div class="page-header">
+  <h1>All beers listing</h1>
+</div>
+
 <table class="table table-striped">
   <tr>
-    <th>Piwo</th>
-    <th>Browar</th>
+    <th>Beer name</th>
+    <th>Brewery</th>
   </tr>
  
   <% @beers.each do |beer| %>
     <tr>
       <td><%= beer.nazwa %></td>
-      <td><%= beer.browar %></td>
+      <td><%= beer.brewery_id %></td>
     </tr>
   <% end %>
 </table>

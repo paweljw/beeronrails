@@ -1,43 +1,42 @@
-<h1>Nowe piwo</h1>
-
 <% if @beer.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@beer.errors.count, "error") %> prohibited
-      this article from being saved:</h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% @beer.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
     <% end %>
-    </ul>
-  </div>
   <% end %>
+
+<div class="page-header">
+	<h1>Add a new beer <small><%= link_to 'or go back', beers_path %></small></h1>
+</div>
+
+<div style="max-width: 600px; margin: 0 auto">
 
 <%= form_for :beer, url: beers_path do |f| %>
 	<div class="form-group">
-	<%= f.label :nazwa %> <%= f.text_field :nazwa, :class => "form-control" %>
+	<%= f.text_field :nazwa, :class => "form-control", :autofocus => '', :placeholder => "Beer name" %>
 	</div>
 
-	<p>
-	<%= f.label :browar %><br/>
-	<%= f.text_field :browar, :class => "form-control" %>
-	</p>
+	<div class="form-group">
+	<%= f.text_field :brewery_name, :class => "form-control", :placeholder => "Brewery"%>
+	</div>
 
-	<p>
-	<%= f.label :foto %><br/>
-	<%= f.text_field :foto, :class => "form-control" %>
-	</p>
+	<div class="form-group">
+	<%= f.text_field :barcode, :class => "form-control", :placeholder => "Barcode"%>
+	</div>
 
-	<p>
-	<%= f.label :kraj %><br/>
-	<%= f.text_field :kraj, :class => "form-control" %>
-	</p>
+	<div class="form-group">
+	<%= f.text_field :kraj, :class => "form-control", :placeholder => "Country of origin (ISO code)" %>
+	</div>
 
-	<p>
-	<%= f.label :komentarz %><br/>
-	<%= f.text_area :komentarz %>
-	</p>
+	<div class="form-group">
+	<%= f.text_field :foto, :class => "form-control", :placeholder => "Photo URL" %>
+	</div>
 
-	<p>
-    <%= f.submit 'Wyślij', :class => "btn btn-default" %>
-  </p>
+	<div class="form-group">
+	<%= f.text_area :komentarz, :class => "form-control", :rows => 3, :placeholder => 'Comment...' %>
+	</div>
+
+	<div class="form-group">
+    <%= f.submit 'Wyślij', :class => "form-control btn btn-primary" %>
+  	</div>
 <% end %>
+</div>
