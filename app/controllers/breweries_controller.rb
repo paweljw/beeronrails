@@ -10,6 +10,7 @@ class BreweriesController < ApplicationController
 
   	@breweries.each { |brewery| 
   		brewery.beer_count = Beer.find(:all, :conditions => "brewery_id =" + brewery.id.to_s).count
+      brewery.country = Beer.find(:last,  :conditions => [ "brewery_id = ?", brewery.id ])
   	}
 
     @breweries = @breweries[params[:page].to_i*25..((params[:page].to_i+1)*25-1)]

@@ -6,14 +6,18 @@
 
 <table class="table table-striped">
   <tr>
+    <th>Beer ID</th>
     <th>Beer name</th>
     <th>Brewery</th>
+    <th>Country</th>
   </tr>
  
   <% @beers.each do |beer| %>
     <tr>
+      <td><%= beer.id %></td>
       <td><%= link_to beer.nazwa, beer_path(beer) %></td>
       <td><%= beer.brewery_name %></td>
+      <td><img src="/assets/flags/<%= beer.kraj %>.png" /></td>
     </tr>
   <% end %>
 </table>

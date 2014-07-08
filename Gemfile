@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'strong_parameters'
 gem 'ffi-icu'
 gem 'kaminari'
+gem 'iso_country_codes'
 
 # Use unicorn as the app server
 # gem 'unicorn'

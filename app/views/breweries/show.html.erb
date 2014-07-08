@@ -1,5 +1,9 @@
 <div class="page-header">
-  <h1><%= @brewery.nazwa %> <span class="label label-default"> <%= @beers.count %> </span> </h1>
+  <h1><%= @brewery.nazwa %> <span class="label label-default"><%= @beers.count %></span> 
+  <% unless @beers.first.kraj == "_" %>
+  <br/><small>A brewery in <%= IsoCountryCodes.find(@beers.first.kraj).name %> <img style="vertical-align: baseline" src="/assets/flags/<%= @beers.first.kraj %>.png" /></small>
+  <% end %>
+  </h1>
 
 
   <h3 class="pull-right">
