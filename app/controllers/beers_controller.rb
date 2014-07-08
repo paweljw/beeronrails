@@ -27,6 +27,8 @@ class BeersController < ApplicationController
 	def index
 		@beers = Beer.all
 
+		page = params[:page].nil? ? 0 : params[:page].to_i-1
+
 		@beers.each { |beer| 
 
 		  		brewery = Brewery.find(beer.brewery_id)
@@ -40,7 +42,7 @@ class BeersController < ApplicationController
   			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
   		end
 
-  		@beers = @beers[params[:page].to_i*25..((params[:page].to_i+1)*25-1)]
+  		@beers = @beers[page*25..(page+1)*25-1]
 
   		@brewskies = Beer.page(params[:page])
 	end
@@ -68,6 +70,53 @@ class BeersController < ApplicationController
  
   		redirect_to beers_path
 	end
+
+	def polish
+		@beers = Beer.where(kraj: 'pl')
+
+		page = params[:page].nil? ? 0 : params[:page].to_i-1
+
+		@beers.each { |beer| 
+
+		  		brewery = Brewery.find(beer.brewery_id)
+  				beer.brewery_name = brewery.nazwa
+  			}
+
+		collator = ICU::Collation::Collator.new("pl_PL")
+
+  		@beers = @beers.sort! do |a, b| 
+  			comp = collator.compare(a.brewery_name, b.brewery_name)
+  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+  		end
+
+  		@beers = @beers[page*25..(page+1)*25-1]
+
+  		@brewskies = Beer.where(kraj: 'pl').page(params[:page])
+  	end
+
+  	def foreign
+		@beers = Beer.where('kraj != ?', 'pl')
+
+		page = params[:page].nil? ? 0 : params[:page].to_i-1
+
+		@beers.each { |beer| 
+
+		  		brewery = Brewery.find(beer.brewery_id)
+  				beer.brewery_name = brewery.nazwa
+  			}
+
+		collator = ICU::Collation::Collator.new("pl_PL")
+
+  		@beers = @beers.sort! do |a, b| 
+  			comp = collator.compare(a.brewery_name, b.brewery_name)
+  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+  		end
+
+  		@beers = @beers[page*25..(page+1)*25-1]
+
+  		@brewskies = Beer.where('kraj != ?', 'pl').page(params[:page])
+  	end
+
 
 	private
   		def beer_params
