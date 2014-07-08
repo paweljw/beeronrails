@@ -11,6 +11,10 @@ class BreweriesController < ApplicationController
   	@breweries.each { |brewery| 
   		brewery.beer_count = Beer.find(:all, :conditions => "brewery_id =" + brewery.id.to_s).count
   	}
+
+    @breweries = @breweries[params[:page].to_i*25..((params[:page].to_i+1)*25-1)]
+
+    @breweries_paginate = Brewery.page(params[:page])
   end
 
   def show

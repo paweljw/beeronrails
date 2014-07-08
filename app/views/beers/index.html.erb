@@ -2,6 +2,8 @@
   <h1>All beers listing</h1>
 </div>
 
+<%= paginate @brewskies %>
+
 <table class="table table-striped">
   <tr>
     <th>Beer name</th>
@@ -15,3 +17,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= paginate @brewskies %>

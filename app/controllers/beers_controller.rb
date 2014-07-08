@@ -1,5 +1,6 @@
 require "ffi-icu"
 
+
 class BeersController < ApplicationController
 	before_filter :authenticate, :except => [:index, :show]
 
@@ -35,7 +36,14 @@ class BeersController < ApplicationController
 
 		collator = ICU::Collation::Collator.new("pl_PL")
 
-  		@beers = @beers.sort! { |a, b| collator.compare(a.brewery_name, b.brewery_name)}
+  		@beers = @beers.sort! do |a, b| 
+  			comp = collator.compare(a.brewery_name, b.brewery_name)
+  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+  		end
+
+  		@beers = @beers[params[:page].to_i*25..((params[:page].to_i+1)*25-1)]
+
+  		@brewskies = Beer.page(params[:page])
 	end
 
 	def edit
