@@ -1,9 +1,32 @@
+<div class="media">
+
+<a class="pull-right" href="#">
+	<img class="media-object" src="http://placehold.it/250x350" />
+</a>
+
+<div class="page-header">
+	<h1><%= @beer.nazwa %></h1>
+
+	<h3 class="pull-right">
+		<%= link_to "Edit", edit_beer_path(@beer), :class => "btn btn-primary" %>
+		<%= link_to "Delete", edit_beer_path(@beer), :class => "btn btn-danger" %>
+	</h3>
+
+</div>
+
+
+<h2>Beer info:</h2>
 <p>
-  <strong>Nazwa:</strong>
-  <%= @beer.nazwa %>
+  <strong>Brewery:</strong>
+  <%= link_to @beer.brewery_name, brewery_path(@beer.brewery_id) %>
 </p>
  
 <p>
-  <strong>Komentarz:</strong>
+  <strong>Comment:</strong><br/>
+  <% if @beer.komentarz.empty? %>
+  	<em>Sorry! No comment found.</em>
+  <% else %>
   <%= @beer.komentarz %>
+  <% end %>
 </p>
+</div>

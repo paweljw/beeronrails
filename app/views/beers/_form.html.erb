@@ -1,0 +1,32 @@
+<div style="max-width: 600px; margin: 0 auto">
+
+<%= form_for :beer, url: beer_path(@beer), method: :put do |f| %>
+	<div class="form-group">
+	<%= f.text_field :nazwa, :class => "form-control", :autofocus => '', :placeholder => "Beer name" %>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_field :brewery_name, :class => "form-control", :placeholder => "Brewery"%>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_field :barcode, :class => "form-control", :placeholder => "Barcode"%>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_field :kraj, :class => "form-control", :placeholder => "Country of origin (ISO code)" %>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_field :foto, :class => "form-control", :placeholder => "Photo URL" %>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_area :komentarz, :class => "form-control", :rows => 3, :placeholder => 'Comment...' %>
+	</div>
+
+	<div class="form-group">
+    <%= f.submit 'Wyślij', :class => "form-control btn btn-primary" %>
+  	</div>
+<% end %>
+</div>

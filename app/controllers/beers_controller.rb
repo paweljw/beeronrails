@@ -18,7 +18,7 @@ class BeersController < ApplicationController
 	def show
   		@beer = Beer.find(params[:id])
 
-  		@brewery = Brewery.find(@beer.brewery_id).first
+  		@brewery = Brewery.find(@beer.brewery_id)
   		@beer.brewery_name = @brewery.nazwa
 	end
 
@@ -34,6 +34,23 @@ class BeersController < ApplicationController
 		collator = ICU::Collation::Collator.new("pl_PL")
 
   		@beers = @beers.sort! { |a, b| collator.compare(a.brewery_name, b.brewery_name)}
+	end
+
+	def edit
+		@beer = Beer.find(params[:id])
+
+		@brewery = Brewery.find(@beer.brewery_id)
+		@beer.brewery_name = @brewery.nazwa
+	end
+
+	def update
+		@beer = Beer.find(params[:id])
+
+		if @beer.update_attributes(beer_params)
+			redirect_to @beer
+		else
+			render 'edit'
+		end
 	end
 
 	private

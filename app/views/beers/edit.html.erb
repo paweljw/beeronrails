@@ -5,7 +5,7 @@
   <% end %>
 
 <div class="page-header">
-	<h1>Add a new beer <small><%= link_to 'or go back', beers_path %></small></h1>
+	<h1>Now editing <em><%= @beer.nazwa %></em> <br/> <small><%= link_to 'or go back', beers_path %></small></h1>
 </div>
 
 <%= render 'form' %>
