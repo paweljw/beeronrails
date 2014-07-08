@@ -1,6 +1,8 @@
 Beeronrails::Application.routes.draw do
   get "beer/index"
 
+  get "breweries/autocomplete"
+
   resources :beers
   resources :breweries
 

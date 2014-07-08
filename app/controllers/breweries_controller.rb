@@ -42,4 +42,16 @@ class BreweriesController < ApplicationController
  
     redirect_to breweries_path
   end
+
+  def autocomplete
+    @breweries = Brewery.where("nazwa LIKE ?", "%"+params[:term]+"%")
+
+    resp = Array.new
+
+    @breweries.each { |brewery|
+      resp.push ({ "id" => brewery.id, "label" => brewery.nazwa, "value" => brewery.nazwa})
+    }
+
+    render json: resp
+  end
 end

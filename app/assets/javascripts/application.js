@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+	$( "#browar" ).autocomplete({
+	        source: "/breweries/autocomplete",
+	        minLength: 2});
+});
