@@ -1,7 +1,7 @@
 require "ffi-icu"
 
 class BeersController < ApplicationController
-	# before_filter :authenticate, :except => [:index, :show]
+	before_filter :authenticate, :except => [:index, :show]
 
 	def new
 		@beer = Beer.new
@@ -53,6 +53,13 @@ class BeersController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+  		@beer = Beer.find(params[:id])
+  		@beer.destroy
+ 
+  		redirect_to beers_path
 	end
 
 	private

@@ -9,7 +9,8 @@
 
 	<h3 class="pull-right">
 		<%= link_to "Edit", edit_beer_path(@beer), :class => "btn btn-primary" %>
-		<%= link_to "Delete", edit_beer_path(@beer), :class => "btn btn-danger" %>
+		<%= link_to 'Delete', beer_path(@beer),
+                    method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 	</h3>
 
 </div>
