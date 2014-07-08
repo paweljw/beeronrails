@@ -56,6 +56,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <% if logged_in? %>
+                    <li>
+                        <a><strong>You've got SuperCow powers!</strong></a>
+                    </li>
+                    <% end %>
                     <li>
                         <%= link_to 'Add a beer', new_beer_path %>
                     </li>

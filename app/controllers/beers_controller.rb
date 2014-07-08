@@ -1,6 +1,8 @@
 require "ffi-icu"
 
 class BeersController < ApplicationController
+	# before_filter :authenticate, :except => [:index, :show]
+
 	def new
 		@beer = Beer.new
 	end

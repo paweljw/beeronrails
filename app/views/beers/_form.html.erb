@@ -1,6 +1,6 @@
 <div style="max-width: 600px; margin: 0 auto">
 
-<%= form_for :beer, url: beer_path(@beer), method: :put do |f| %>
+<%= form_for @beer do |f| %>
 	<div class="form-group">
 	<%= f.text_field :nazwa, :class => "form-control", :autofocus => '', :placeholder => "Beer name" %>
 	</div>
