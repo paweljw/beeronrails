@@ -31,4 +31,11 @@ class BreweriesController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @brewery = Brewery.find(params[:id])
+    @brewery.destroy
+ 
+    redirect_to breweries_path
+  end
 end

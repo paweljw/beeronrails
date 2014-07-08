@@ -4,8 +4,12 @@
 
   <h3 class="pull-right">
     <%= link_to "Edit", edit_brewery_path(@brewery), :class => "btn btn-primary" %>
+    <% if @beers.count < 1 %>
     <%= link_to 'Delete', brewery_path(@brewery),
                     method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+    <% else %>
+    <%= link_to 'Delete', "#", :onclick => 'alert("Can\'t remove a brewery that still has beers.");', :class => "btn btn-danger" %>
+    <% end %>
   </h3>
 </div>
 
