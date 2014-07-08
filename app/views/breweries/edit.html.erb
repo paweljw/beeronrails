@@ -1,0 +1,22 @@
+<% if @brewery.errors.any? %>
+    <% @brewery.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+<div class="page-header">
+	<h1>Editing <em><%= @brewery.nazwa %></em> <br/> <small><%= link_to 'or go back', breweries_path %></small></h1>
+</div>
+
+<div style="max-width: 600px; margin: 0 auto">
+
+<%= form_for @brewery do |f| %>
+	<div class="form-group">
+	<%= f.text_field :nazwa, :class => "form-control", :autofocus => '', :placeholder => "Brewery name" %>
+	</div>
+
+	<div class="form-group">
+    <%= f.submit 'Save', :class => "form-control btn btn-primary" %>
+  	</div>
+<% end %>
+</div>

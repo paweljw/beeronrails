@@ -17,4 +17,18 @@ class BreweriesController < ApplicationController
   	@brewery = Brewery.find(params[:id])
   	@beers = Beer.find(:all, :conditions => "brewery_id = " + @brewery.id.to_s)
   end
+
+  def edit
+      @brewery = Brewery.find(params[:id])
+  end
+
+  def update
+    @brewery = Brewery.find(params[:id])
+
+    if @brewery.update_attributes(params[:brewery])
+      redirect_to @brewery
+    else
+      render 'edit'
+    end
+  end
 end

@@ -1,13 +1,22 @@
 <div class="page-header">
   <h1><%= @brewery.nazwa %> <span class="label label-default"> <%= @beers.count %> </span> </h1>
+
+
+  <h3 class="pull-right">
+    <%= link_to "Edit", edit_brewery_path(@brewery), :class => "btn btn-primary" %>
+    <%= link_to 'Delete', brewery_path(@brewery),
+                    method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+  </h3>
 </div>
+
+<h2>Beers from this brewery:</h2><br/>
 
 <table class="table table-striped">
   <tr>
     <th>ID</th>
     <th>Beer name</th>
   </tr>
- 
+
   <% @beers.each do |beer| %>
     <tr>
       <td><%= beer.id %></td>
