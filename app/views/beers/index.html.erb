@@ -1,5 +1,8 @@
 <div class="page-header">
-  <h1>All beers listing</h1>
+  <h1>All beers listing<br/>
+  <small>Want just the <%= link_to "Polish", beers_polish_path %> or <%= link_to "foreign", beers_foreign_path %> beers?</small>
+  </h1>
 </div>
+
 
 <%= render 'list' %>
