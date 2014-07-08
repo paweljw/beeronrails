@@ -19,6 +19,7 @@ end
 gem 'jquery-rails'
 gem 'strong_parameters'
 gem 'ffi-icu'
+gem 'kaminari'
 
 # Use unicorn as the app server
 # gem 'unicorn'
