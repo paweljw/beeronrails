@@ -1,7 +1,10 @@
 Beeronrails::Application.routes.draw do
   get "beer/index"
+  get "beer/denied"
 
   get "breweries/autocomplete"
+  get "breweries/polish"
+  get "breweries/foreign"
 
   get "beers/polish"
   get "beers/foreign"

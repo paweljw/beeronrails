@@ -1,3 +1,5 @@
+<%= paginate @breweries %>
+
 <table class="table table-striped">
   <tr>
     <th>Brewery name</th>
@@ -9,7 +11,9 @@
     <tr>
       <td><%= link_to brewery.nazwa, brewery_path(brewery) %></td>
       <td><%= brewery.beer_count %></td>
-      <td><img src="/assets/flags/<%= brewery.country.kraj %>.png"/></td>
+      <td><img src="/assets/flags/<%= brewery.country %>.png"/></td>
     </tr>
   <% end %>
 </table>
+
+<%= paginate @breweries %>
