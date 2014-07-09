@@ -1,8 +1,12 @@
 <div class="page-header">
-  <h1>All beers listing<br/>
-  <small>Want just the <%= link_to "Polish", beers_polish_path %> or <%= link_to "foreign", beers_foreign_path %> beers?</small>
-  </h1>
+  <h1>Beers</h1>
 </div>
 
+
+<ul class="nav nav-tabs nav-justified" role="tablist">
+	<li class="active"><%= link_to "All", beers_path %></li>
+	<li><%= link_to "Polish", beers_polish_path %></li>
+	<li><%= link_to "Foreign", beers_foreign_path %></li>
+</ul>
 
 <%= render 'list' %>
