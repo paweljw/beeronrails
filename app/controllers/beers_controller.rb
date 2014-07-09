@@ -19,9 +19,6 @@ class BeersController < ApplicationController
 
 	def show
   		@beer = Beer.find(params[:id])
-
-  		@brewery = Brewery.find(@beer.brewery_id)
-  		@beer.brewery_name = @brewery.nazwa
 	end
 
 	def index
@@ -38,6 +35,18 @@ class BeersController < ApplicationController
 	end
 
   def search
+    unless params[:term].nil?
+      @beers = Beer.where("nazwa LIKE ? OR barcode LIKE ?", "%"+params[:term]+"%", "%"+params[:term]+"%")
+
+      collator = ICU::Collation::Collator.new("pl_PL")
+
+      @beers = @beers.sort! do |a, b| 
+        comp = collator.compare(a.brewery_name, b.brewery_name)
+        comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      end
+
+      @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
+    end
   end
 
 	def edit

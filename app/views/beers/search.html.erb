@@ -1,0 +1,23 @@
+<div class="page-header">
+	<h1>Search<% unless params[:term].empty? %> for "<em><%= params[:term] %></em>"<%end%></h1>
+</div>
+
+
+<div style="max-width: 600px; margin: 0 auto">
+	<%= form_tag beers_search_path, :method => 'get' do %>
+	<div class="form-group">
+		<div class="input-group">
+			<%= text_field_tag :term, params[:term], :class => "form-control input-lg", :placeholder => "Search term"%>
+				<div class="input-group-addon">
+					<%= submit_tag "Search", :name => nil, :class => "btn btn-success", :style => "height: 32px" %>
+				</div>
+		</div>
+	</div>
+	<%end%>
+</div>
+
+<% unless params[:term].empty? %>
+
+<%= render 'searchlist' %>
+
+<%end%>

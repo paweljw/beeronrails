@@ -41,6 +41,14 @@ body {
                         <a><strong>You've got SuperCow powers!</strong></a>
                     </li>
                     <% end %>
+                    <% if controller_name == "beers" %>
+                        <%= form_tag beers_search_path, :method => 'get', :class => "navbar-form navbar-right" do %>
+                        <div class="form-group">
+                            <%= text_field_tag :term, params[:term], :class => "form-control", :placeholder => "Search term..."%>
+                        </div>
+                        <%= submit_tag "Search", :name => nil, :class => "btn", :style => "height: 32px" %>
+                        <%end%>
+                    <%end%>
                     <li>
                         <%= link_to 'Add a beer', new_beer_path %>
                     </li>
