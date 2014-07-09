@@ -60,11 +60,23 @@ body {
                     <li>
                         <%= link_to 'Add a beer', new_beer_path %>
                     </li>
-                    <li>
-                        <%= link_to 'View beers', beers_path %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beers <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><%= link_to "All", beers_path %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Polish", beers_polish_path %></li>
+                        <li><%= link_to "Foreign", beers_foreign_path %></li>
+                      </ul>
                     </li>
-                    <li>
-                        <%= link_to 'View breweries', breweries_path %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Breweries <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><%= link_to "All", breweries_path %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Polish", breweries_polish_path %></li>
+                        <li><%= link_to "Foreign", breweries_foreign_path %></li>
+                      </ul>
                     </li>
                 </ul>
             </div>

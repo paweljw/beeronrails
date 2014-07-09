@@ -1,0 +1,19 @@
+<%= paginate @breweries %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Brewery name</th>
+    <th>Beer count</th>
+    <th>Country</th>
+  </tr>
+ 
+  <% @breweries.each do |brewery| %>
+    <tr>
+      <td><%= link_to raw(brewery.nazwa.sub params[:term], "<strong>" + params[:term] + "</strong>"), brewery_path(brewery) %></td>
+      <td><%= brewery.beer_count %></td>
+      <td><img src="/assets/flags/<%= brewery.country %>.png"/></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @breweries %>
