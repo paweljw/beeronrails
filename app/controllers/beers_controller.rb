@@ -1,7 +1,7 @@
 require "ffi-icu"
 
 class BeersController < ApplicationController
-	before_filter :authenticate, :except => [:index, :show, :polish, :foreign]
+	before_filter :authenticate, :except => [:index, :show, :polish, :foreign, :search]
 
 	def new
 		@beer = Beer.new
@@ -27,25 +27,18 @@ class BeersController < ApplicationController
 	def index
 		@beers = Beer.all
 
-		page = params[:page].nil? ? 0 : params[:page].to_i-1
-
-		@beers.each { |beer| 
-
-		  		brewery = Brewery.find(beer.brewery_id)
-  				beer.brewery_name = brewery.nazwa
-  			}
-
 		collator = ICU::Collation::Collator.new("pl_PL")
 
-  		@beers = @beers.sort! do |a, b| 
-  			comp = collator.compare(a.brewery_name, b.brewery_name)
-  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
-  		end
+		@beers = @beers.sort! do |a, b| 
+			comp = collator.compare(a.brewery_name, b.brewery_name)
+			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+		end
 
-  		@beers = @beers[page*25..(page+1)*25-1]
-
-  		@brewskies = Beer.page(params[:page])
+		@beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
 	end
+
+  def search
+  end
 
 	def edit
 		@beer = Beer.find(params[:id])
@@ -74,49 +67,28 @@ class BeersController < ApplicationController
 	def polish
 		@beers = Beer.where(kraj: 'pl')
 
-		page = params[:page].nil? ? 0 : params[:page].to_i-1
+    collator = ICU::Collation::Collator.new("pl_PL")
 
-		@beers.each { |beer| 
+    @beers = @beers.sort! do |a, b| 
+      comp = collator.compare(a.brewery_name, b.brewery_name)
+      comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+    end
 
-		  		brewery = Brewery.find(beer.brewery_id)
-  				beer.brewery_name = brewery.nazwa
-  			}
+    @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
+ 	end
 
-		collator = ICU::Collation::Collator.new("pl_PL")
+	def foreign
+  	@beers = Beer.where('kraj != ?', 'pl')
 
-  		@beers = @beers.sort! do |a, b| 
-  			comp = collator.compare(a.brewery_name, b.brewery_name)
-  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
-  		end
+    collator = ICU::Collation::Collator.new("pl_PL")
 
-  		@beers = @beers[page*25..(page+1)*25-1]
+    @beers = @beers.sort! do |a, b| 
+      comp = collator.compare(a.brewery_name, b.brewery_name)
+      comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+    end
 
-  		@brewskies = Beer.where(kraj: 'pl').page(params[:page])
-  	end
-
-  	def foreign
-		@beers = Beer.where('kraj != ?', 'pl')
-
-		page = params[:page].nil? ? 0 : params[:page].to_i-1
-
-		@beers.each { |beer| 
-
-		  		brewery = Brewery.find(beer.brewery_id)
-  				beer.brewery_name = brewery.nazwa
-  			}
-
-		collator = ICU::Collation::Collator.new("pl_PL")
-
-  		@beers = @beers.sort! do |a, b| 
-  			comp = collator.compare(a.brewery_name, b.brewery_name)
-  			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
-  		end
-
-  		@beers = @beers[page*25..(page+1)*25-1]
-
-  		@brewskies = Beer.where('kraj != ?', 'pl').page(params[:page])
-  	end
-
+    @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
+	end
 
 	private
   		def beer_params

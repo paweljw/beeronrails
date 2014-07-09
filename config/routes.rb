@@ -5,9 +5,11 @@ Beeronrails::Application.routes.draw do
   get "breweries/autocomplete"
   get "breweries/polish"
   get "breweries/foreign"
+  get "breweries/search"
 
   get "beers/polish"
   get "beers/foreign"
+  get "beers/search"
 
   resources :beers
   resources :breweries
