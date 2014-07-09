@@ -1,7 +1,7 @@
 require "ffi-icu"
 
 class BreweriesController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show, :polish, :foreign]
+  before_filter :authenticate, :except => [:index, :show, :polish, :foreign, :search]
   def index
   	@breweries = Brewery.all
 
@@ -48,6 +48,18 @@ class BreweriesController < ApplicationController
     }
 
     @breweries = Kaminari.paginate_array(brew_temp).page(params[:page]).per(25)
+  end
+
+   def search
+    unless params[:term].nil?
+      @breweries = Brewery.where("nazwa LIKE ?", "%"+params[:term]+"%")
+
+      collator = ICU::Collation::Collator.new("pl_PL")
+
+      @breweries.sort! { |a, b| collator.compare(a.nazwa, b.nazwa) }
+
+      @breweries = Kaminari.paginate_array(@breweries).page(params[:page]).per(25)
+    end
   end
     
   def show

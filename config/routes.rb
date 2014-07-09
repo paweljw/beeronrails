@@ -6,6 +6,7 @@ Beeronrails::Application.routes.draw do
   get "breweries/polish"
   get "breweries/foreign"
   get "breweries/search"
+  get "breweries/search/:term", to: "breweries#search"
 
   get "beers/polish"
   get "beers/foreign"

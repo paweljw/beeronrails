@@ -44,7 +44,15 @@ body {
                     <% if controller_name == "beers" %>
                         <%= form_tag beers_search_path, :method => 'get', :class => "navbar-form navbar-right" do %>
                         <div class="form-group">
-                            <%= text_field_tag :term, params[:term], :class => "form-control", :placeholder => "Search term..."%>
+                            <%= text_field_tag :term, params[:term], :class => "form-control", :placeholder => "Beer name..."%>
+                        </div>
+                        <%= submit_tag "Search", :name => nil, :class => "btn", :style => "height: 32px" %>
+                        <%end%>
+                    <%end%>
+                    <% if controller_name == "breweries" %>
+                        <%= form_tag breweries_search_path, :method => 'get', :class => "navbar-form navbar-right" do %>
+                        <div class="form-group">
+                            <%= text_field_tag :term, params[:term], :class => "form-control", :placeholder => "Brewery name..."%>
                         </div>
                         <%= submit_tag "Search", :name => nil, :class => "btn", :style => "height: 32px" %>
                         <%end%>
