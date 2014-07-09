@@ -11,3 +11,32 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+	padding: 0 15px;
+}
+
+@media(min-width:768px) {
+    .navbar-fixed-top .nav {
+        padding: 15px 0;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 0 0;
+    }
+}
+
+
+img.denied-image
+{
+-webkit-border-radius: 60px;
+-moz-border-radius: 60px;
+border-radius: 60px;
+width: 500px;
+}
