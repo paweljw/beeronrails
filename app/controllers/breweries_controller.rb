@@ -1,6 +1,7 @@
 require "ffi-icu"
 
 class BreweriesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show, :polish, :foreign]
   def index
   	@breweries = Brewery.all
 

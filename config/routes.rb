@@ -14,6 +14,8 @@ Beeronrails::Application.routes.draw do
 
   root :to => "beers#index"
 
+  match '*unmatched_route', :to => 'application#raise_not_found!'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
