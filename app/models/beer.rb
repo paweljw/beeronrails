@@ -7,6 +7,10 @@ class Beer < ActiveRecord::Base
   attr_accessor :inner_brewery
 
   def brewery_name
+    if self.brewery_id.nil?
+      return ""
+    end
+
   	if @inner_brewery
   		return @inner_brewery
   	else 
