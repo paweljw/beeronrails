@@ -1,7 +1,6 @@
-<div class="page-header">
-	<h1>Search
-		<% if params[:term] %>
-		<% unless params[:term].empty? %> for "<em><%= params[:term] %></em>"<%end%></h1>
+<h1>Search<% if params[:term] %><% unless params[:term].empty? %>ing for "<em><%= params[:term] %></em>"
+		 <small style="font-size: 40%"> get a <a href="/beers/search/<%= params[:term] %>">permalink</a> to this search</small>
+		 <%end%></h1>
 		<%end%>
 </div>
 
