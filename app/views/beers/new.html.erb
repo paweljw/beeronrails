@@ -9,10 +9,11 @@
 <div class="alert alert-success" role="alert"><strong>Success!</strong> <em><%= @new_beer.nazwa %></em> added as beer #<%= @new_beer.id %>!</div>
 <% end %>
 
-<% unless @new_brewery.empty? %>
-<div class="alert alert-success" role="alert"><strong>Success!</strong> Brewery <em><%= @new_brewery %></em> added!</div>
+<% if @new_brewery %>
+	<% unless @new_brewery.empty? %>
+	<div class="alert alert-success" role="alert"><strong>Success!</strong> Brewery <em><%= @new_brewery %></em> added!</div>
+	<% end %>
 <% end %>
-
 
 <div class="page-header">
 	<h1>Add a new beer <small><%= link_to 'or go back', beers_path %></small></h1>
