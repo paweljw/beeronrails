@@ -24,6 +24,10 @@ class BeersController < ApplicationController
 	end
 
 	def index
+    @all_beers_count = all_beers_count
+    @polish_beers_count = polish_beers_count
+    @foreign_beers_count = foreign_beers_count
+
     unless params[:shown]
 		  @beers = Beer.all
     else
@@ -91,6 +95,10 @@ class BeersController < ApplicationController
 	end
 
 	def polish
+    @all_beers_count = all_beers_count
+    @polish_beers_count = polish_beers_count
+    @foreign_beers_count = foreign_beers_count
+
 		unless params[:shown]
       @beers = Beer.where(kraj: 'pl')
     else
@@ -118,6 +126,10 @@ class BeersController < ApplicationController
  	end
 
 	def foreign
+    @all_beers_count = all_beers_count
+    @polish_beers_count = polish_beers_count
+    @foreign_beers_count = foreign_beers_count
+
   	unless params[:shown]
       @beers = Beer.where("kraj != ?", "pl")
     else
@@ -183,5 +195,17 @@ class BeersController < ApplicationController
         #drink.png?
         #award_star_gold_@
         return beer
+      end
+
+      def all_beers_count
+        return Beer.all.count
+      end
+
+      def polish_beers_count
+        return Beer.where(kraj: 'pl').count
+      end
+
+      def foreign_beers_count
+        return Beer.where("kraj != ?", "pl").count
       end
 end
