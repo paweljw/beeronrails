@@ -3,10 +3,10 @@ sqlite: &sqlite
   database: db/<%= Rails.env %>.sqlite3
 
 mysql: &mysql
-  adapter: mysql2
+  adapter: mysql
   username: root
   password:
-  database: myapp_<%= Rails.env %>
+  database: beeronrails_<%= Rails.env %>
 
 defaults: &defaults
   pool: 5
