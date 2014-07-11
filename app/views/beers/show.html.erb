@@ -29,7 +29,7 @@
   <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.kraj %>.png" /> <%= IsoCountryCodes.find(@beer.kraj).name %> 
 <%end>%>
 <p>
-  <strong>Comment:</strong><br/>
+  <strong>Comment:</strong> <%= raw(@beer.icons) %><br/>
   <% if @beer.komentarz.empty? %>
   	<em>Sorry! No comment found.</em>
   <% else %>

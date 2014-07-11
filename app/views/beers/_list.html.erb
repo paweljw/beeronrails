@@ -14,7 +14,7 @@
   <% @beers.each do |beer| %>
     <tr>
       <td><%= beer.id %></td>
-      <td><%= link_to beer.nazwa, beer_path(beer) %></td>
+      <td><%= link_to beer.nazwa, beer_path(beer) %> <%= raw(beer.icons) %></td>
       <td><%= link_to beer.brewery_name, brewery_path(beer.brewery_id) %></td>
       <td><img src="/assets/flags/<%= beer.kraj %>.png" /></td>
     </tr>

@@ -20,7 +20,7 @@ class BeersController < ApplicationController
 	end
 
 	def show
-  		@beer = Beer.find(params[:id])
+  		@beer = beer_name_add_icons(Beer.find(params[:id]))
 	end
 
 	def index
@@ -33,12 +33,16 @@ class BeersController < ApplicationController
 			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
 		end
 
+    @beers.each do |beer|
+      beer = beer_name_add_icons(beer)
+    end
+
 		@beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
 	end
 
   def search
     unless params[:term].nil?
-      @beers = Beer.where("nazwa LIKE ? OR barcode LIKE ?", "%"+params[:term]+"%", "%"+params[:term]+"%")
+      @beers = Beer.where("nazwa LIKE ? OR barcode LIKE ? OR komentarz LIKE ?", "%"+params[:term]+"%", "%"+params[:term]+"%",  "%"+params[:term]+"%")
 
       collator = ICU::Collation::Collator.new("pl_PL")
 
@@ -47,15 +51,16 @@ class BeersController < ApplicationController
         comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
       end
 
+      @beers.each do |beer|
+        beer = beer_name_add_icons(beer)
+      end
+
       @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
     end
   end
 
 	def edit
 		@beer = Beer.find(params[:id])
-
-		@brewery = Brewery.find(@beer.brewery_id)
-		@beer.brewery_name = @brewery.nazwa
 	end
 
 	def update
@@ -85,6 +90,10 @@ class BeersController < ApplicationController
       comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
     end
 
+    @beers.each do |beer|
+      beer = beer_name_add_icons(beer)
+    end
+
     @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
  	end
 
@@ -96,6 +105,10 @@ class BeersController < ApplicationController
     @beers = @beers.sort! do |a, b| 
       comp = collator.compare(a.brewery_name, b.brewery_name)
       comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+    end
+
+    @beers.each do |beer|
+      beer = beer_name_add_icons(beer)
     end
 
     @beers = Kaminari.paginate_array(@beers).page(params[:page]).per(25)
@@ -122,4 +135,23 @@ class BeersController < ApplicationController
 
     		params.require(:beer).permit(:nazwa, :komentarz, :barcode, :brewery_id, :kraj, :foto)
   		end
+
+      def beer_name_add_icons(beer)
+        beer.icons = ""
+        unless beer.komentarz.empty?
+          escaped_comment = beer.komentarz.gsub("'", %q(\\\'))
+          beer.icons += "<img src='/assets/icons/comment.png' title='Comment: #{escaped_comment}' />"
+        end
+
+        if beer.komentarz.include? "#butelka" or beer.komentarz.include? "#bottle"
+          beer.icons += " <img src='/assets/icons/bottle.png' title='This beer is stored as a physical bottle' />"
+        end
+
+        if beer.komentarz.include? "#edycjalimitowana" or beer.komentarz.include? "#limited"
+          beer.icons += " <img src='/assets/icons/award_star_gold_2.png' title='This beer is a limited edition or an otherwise seasonal product' />"
+        end
+        #drink.png?
+        #award_star_gold_@
+        return beer
+      end
 end
