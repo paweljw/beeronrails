@@ -8,4 +8,11 @@
 	<li><%= link_to "Foreign", beers_foreign_path %></li>
 </ul>
 
+<div class="pull-left">
+<br/>
+<%= form_tag beers_polish_path, :method => 'get', :class => "form-inline" do %>
+  <%= select_tag(:shown, options_for_select([['Show all', "all"], ['Show ONLY bottles', "bottles"], ['Show everything EXCEPT bottles', "stickers"]], params[:shown]), :class => "form-control", :id => "shown") %>
+<% end %>
+</div>
+
 <%= render 'list' %>

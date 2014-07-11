@@ -24,7 +24,17 @@ class BeersController < ApplicationController
 	end
 
 	def index
-		@beers = Beer.all
+    unless params[:shown]
+		  @beers = Beer.all
+    else
+      if params[:shown] == "bottles"
+        @beers = Beer.where("komentarz LIKE ? OR komentarz LIKE ?", "%#butelka%", "%#bottle%")
+      elsif
+        @beers = Beer.where("komentarz NOT LIKE ? AND komentarz NOT LIKE ?", "%#butelka%", "%#bottle%")
+      else
+        @beers = Beer.all
+      end
+    end
 
 		collator = ICU::Collation::Collator.new("pl_PL")
 
@@ -81,7 +91,17 @@ class BeersController < ApplicationController
 	end
 
 	def polish
-		@beers = Beer.where(kraj: 'pl')
+		unless params[:shown]
+      @beers = Beer.where(kraj: 'pl')
+    else
+      if params[:shown] == "bottles"
+        @beers = Beer.where("(komentarz LIKE ? OR komentarz LIKE ?) AND kraj LIKE ?", "%#butelka%", "%#bottle%", "pl")
+      elsif
+        @beers = Beer.where("komentarz NOT LIKE ? AND komentarz NOT LIKE ? AND kraj LIKE ?", "%#butelka%", "%#bottle%", "pl")
+      else
+        @beers = Beer.all
+      end
+    end
 
     collator = ICU::Collation::Collator.new("pl_PL")
 
@@ -98,7 +118,17 @@ class BeersController < ApplicationController
  	end
 
 	def foreign
-  	@beers = Beer.where('kraj != ?', 'pl')
+  	unless params[:shown]
+      @beers = Beer.where("kraj != ?", "pl")
+    else
+      if params[:shown] == "bottles"
+        @beers = Beer.where("(komentarz LIKE ? OR komentarz LIKE ?) AND kraj NOT LIKE ?", "%#butelka%", "%#bottle%", "pl")
+      elsif
+        @beers = Beer.where("komentarz NOT LIKE ? AND komentarz NOT LIKE ? AND kraj NOT LIKE ?", "%#butelka%", "%#bottle%", "pl")
+      else
+        @beers = Beer.all
+      end
+    end
 
     collator = ICU::Collation::Collator.new("pl_PL")
 

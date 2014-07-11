@@ -2,11 +2,17 @@
   <h1>Beers</h1>
 </div>
 
-
 <ul class="nav nav-tabs nav-justified" role="tablist">
 	<li class="active"><%= link_to "All", beers_path %></li>
 	<li><%= link_to "Polish", beers_polish_path %></li>
 	<li><%= link_to "Foreign", beers_foreign_path %></li>
 </ul>
+
+<div class="pull-left">
+<br/>
+<%= form_tag beers_path, :method => 'get', :class => "form-inline" do %>
+  <%= select_tag(:shown, options_for_select([['Show all', "all"], ['Show ONLY bottles', "bottles"], ['Show everything EXCEPT bottles', "stickers"]], params[:shown]), :class => "form-control", :id => "shown") %>
+<% end %>
+</div>
 
 <%= render 'list' %>

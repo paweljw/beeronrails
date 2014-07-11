@@ -18,4 +18,8 @@ $(function() {
 	$( "#browar" ).autocomplete({
 	        source: "/breweries/autocomplete",
 	        minLength: 2});
+
+    $('#shown').change(function() {
+        this.form.submit();
+    });
 });
