@@ -37,6 +37,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    ean-country (0.0.1)
     erubis (2.7.0)
     execjs (2.2.1)
     ffi (1.9.3)
@@ -115,6 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  ean-country
   ffi-icu
   iso_country_codes
   jquery-rails

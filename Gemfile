@@ -21,6 +21,7 @@ gem 'strong_parameters'
 gem 'ffi-icu'
 gem 'kaminari'
 gem 'iso_country_codes'
+gem 'ean-country'
 
 # Use unicorn as the app server
 # gem 'unicorn'
