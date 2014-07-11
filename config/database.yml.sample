@@ -1,0 +1,26 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: beeronrails_dev
+  pool: 5
+  username: ###
+  password: ###
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: beeronrails_test
+  pool: 5
+  username: ###
+  password: ###
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: beeronrails_prod
+  pool: 5
+  username: ###
+  password: ###
