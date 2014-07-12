@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140707141415) do
+ActiveRecord::Schema.define(:version => 20140712191309) do
 
   create_table "beers", :force => true do |t|
     t.string   "nazwa"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(:version => 20140707141415) do
     t.string   "foto"
     t.string   "kraj"
     t.text     "komentarz"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "brewery_id"
     t.string   "barcode"
+    t.string   "local_image"
   end
 
   create_table "breweries", :force => true do |t|

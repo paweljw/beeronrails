@@ -1,6 +1,6 @@
 <div style="max-width: 600px; margin: 0 auto">
 
-<%= form_for @beer do |f| %>
+<%= form_for @beer, :html => {:multipart => true}  do |f| %>
 	<div class="form-group">
 	<%= f.text_field :nazwa, :class => "form-control", :autofocus => '', :placeholder => "Beer name" %>
 	</div>
@@ -18,7 +18,11 @@
 	</div>
 
 	<div class="form-group">
-	<%= f.text_field :foto, :class => "form-control", :placeholder => "Photo URL" %>
+	<%= f.file_field :local_image %>
+	</div>
+
+	<div class="form-group">
+	<%= f.text_field :foto, :class => "form-control", :placeholder => "or provide photo URL" %>
 	</div>
 
 	<div class="form-group">

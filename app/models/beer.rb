@@ -1,6 +1,8 @@
 class Beer < ActiveRecord::Base
   attr_accessor :icons
-  attr_accessible :foto, :komentarz, :kraj, :nazwa, :brewery_id, :barcode, :icons
+  attr_accessible :foto, :komentarz, :kraj, :nazwa, :brewery_id, :barcode, :icons, :local_image
+
+  mount_uploader :local_image, LocalImageUploader
 
   validates :nazwa, presence: true
   validates :kraj, presence: true

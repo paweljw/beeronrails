@@ -24,6 +24,8 @@ gem 'iso_country_codes'
 gem 'ean-country'
 gem 'mysql2'
 gem 'yaml_db'
+gem 'carrierwave'
+gem 'rmagick'
 
 # Use unicorn as the app server
 # gem 'unicorn'

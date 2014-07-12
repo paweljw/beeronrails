@@ -1,8 +1,14 @@
 <div class="media">
 
-<a class="pull-right" href="#">
-	<img class="media-object" src="http://placehold.it/250x350" />
-</a>
+<div class="pull-right">
+  <% if not @beer.local_image.url.nil? %>
+  <%= image_tag @beer.local_image_url(:thumb) %>
+  <% elsif not @beer.foto.length < 1 %>
+  <img class="media-object" src="<%= @beer.foto %>" style="width:250px" />
+  <% else %>
+	<img class="media-object" src="http://placehold.it/250x350&text=No+photo" />  
+  <% end %>
+</div>
 
 <div class="page-header">
 	<h1><%= @beer.nazwa %></h1>
