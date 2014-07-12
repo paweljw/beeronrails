@@ -1,9 +1,11 @@
 namespace :pjw do
-  desc "Preparing database"
-  task :prepare_database => :environment do
-  	Rake::Task["db:create"].execute
-	Rake::Task["db:schema:load"].execute
-	Rake::Task["db:load"].execute
-  end
+  desc "RDoc"
+  RDoc::Task.new :rdoc do |rdoc|
+  	rdoc.main = "README.rdoc"
 
-end
+  	rdoc.rdoc_files.include("README.rdoc", "doc/*.rdoc", "app/**/*.rb", "lib/*.rb", "config/**/*.rb")
+
+  	rdoc.title = "App Documentation"
+  	rdoc.options << "--all" 
+	end
+  end

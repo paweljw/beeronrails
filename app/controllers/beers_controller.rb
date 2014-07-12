@@ -175,7 +175,7 @@ class BeersController < ApplicationController
   				params[:beer][:brewery_id] = @brewery.id
   			end
 
-    		params.require(:beer).permit(:nazwa, :komentarz, :barcode, :brewery_id, :kraj, :foto)
+    		params.require(:beer).permit(:nazwa, :komentarz, :barcode, :brewery_id, :kraj, :foto, :local_image)
   		end
 
       def beer_name_add_icons(beer)
@@ -192,8 +192,11 @@ class BeersController < ApplicationController
         if beer.komentarz.include? "#edycjalimitowana" or beer.komentarz.include? "#limited"
           beer.icons += " <img src='/assets/icons/award_star_gold_2.png' title='This beer is a limited edition or an otherwise seasonal product' />"
         end
-        #drink.png?
-        #award_star_gold_@
+
+        if not beer.local_image.url.nil? or beer.foto.length > 1
+          beer.icons += " <img src='/assets/icons/camera.png' title='This beer has a photo' />"
+        end
+        
         return beer
       end
 

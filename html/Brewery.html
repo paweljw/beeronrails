@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Brewery - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/brewery.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-beer_count">#beer_count</a>
+    
+    <li><a href="#method-i-country">#country</a>
+    
+    <li><a href="#method-i-permalink">#permalink</a>
+    
+    <li><a href="#method-i-to_param">#to_param</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Beeronrails.html">Beeronrails</a>
+  
+    <li><a href="./Beeronrails/Application.html">Beeronrails::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Beer.html">Beer</a>
+  
+    <li><a href="./BeerController.html">BeerController</a>
+  
+    <li><a href="./BeerHelper.html">BeerHelper</a>
+  
+    <li><a href="./BeersController.html">BeersController</a>
+  
+    <li><a href="./BeersHelper.html">BeersHelper</a>
+  
+    <li><a href="./BreweriesController.html">BreweriesController</a>
+  
+    <li><a href="./BreweriesHelper.html">BreweriesHelper</a>
+  
+    <li><a href="./Brewery.html">Brewery</a>
+  
+    <li><a href="./LocalImageUploader.html">LocalImageUploader</a>
+  
+    <li><a href="./UnAuth.html">UnAuth</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Brewery</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-beer_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beer_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="beer_count-source">
+            <pre><span class="ruby-comment"># File app/models/brewery.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">beer_count</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;brewery_id = ?&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beer_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beer_count-method -->
+
+    
+      <div id="method-i-country" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">country</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="country-source">
+            <pre><span class="ruby-comment"># File app/models/brewery.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">country</span>
+        <span class="ruby-identifier">beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;brewery_id = ?&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span> ])
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">country</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;_&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- country-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- country-method -->
+
+    
+      <div id="method-i-permalink" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">permalink</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="permalink-source">
+            <pre><span class="ruby-comment"># File app/models/brewery.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">permalink</span>
+<span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nazwa</span>.<span class="ruby-identifier">parameterize</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- permalink-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- permalink-method -->
+
+    
+      <div id="method-i-to_param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_param</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_param-source">
+            <pre><span class="ruby-comment"># File app/models/brewery.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_param</span>
+<span class="ruby-node">&quot;#{id}-#{permalink}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_param-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_param-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

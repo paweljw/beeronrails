@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class BeersController - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/beers_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-all_beers_count">#all_beers_count</a>
+    
+    <li><a href="#method-i-beer_name_add_icons">#beer_name_add_icons</a>
+    
+    <li><a href="#method-i-beer_params">#beer_params</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-destroy">#destroy</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-foreign">#foreign</a>
+    
+    <li><a href="#method-i-foreign_beers_count">#foreign_beers_count</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-polish">#polish</a>
+    
+    <li><a href="#method-i-polish_beers_count">#polish_beers_count</a>
+    
+    <li><a href="#method-i-search">#search</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Beeronrails.html">Beeronrails</a>
+  
+    <li><a href="./Beeronrails/Application.html">Beeronrails::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Beer.html">Beer</a>
+  
+    <li><a href="./BeerController.html">BeerController</a>
+  
+    <li><a href="./BeerHelper.html">BeerHelper</a>
+  
+    <li><a href="./BeersController.html">BeersController</a>
+  
+    <li><a href="./BeersHelper.html">BeersHelper</a>
+  
+    <li><a href="./BreweriesController.html">BreweriesController</a>
+  
+    <li><a href="./BreweriesHelper.html">BreweriesHelper</a>
+  
+    <li><a href="./Brewery.html">Brewery</a>
+  
+    <li><a href="./LocalImageUploader.html">LocalImageUploader</a>
+  
+    <li><a href="./UnAuth.html">UnAuth</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class BeersController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 10</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+          <span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beer_params</span>)
+ 
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@beer</span>.<span class="ruby-identifier">save</span>
+                  <span class="ruby-ivar">@new_beer</span> = <span class="ruby-ivar">@beer</span>
+<span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">render</span> <span class="ruby-string">'new'</span>
+          <span class="ruby-keyword">else</span>
+                  <span class="ruby-identifier">render</span> <span class="ruby-string">'new'</span>
+          <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+        <span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+        <span class="ruby-ivar">@beer</span>.<span class="ruby-identifier">destroy</span>
+ 
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">beers_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+        <span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-foreign" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">foreign</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="foreign-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 128</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">foreign</span>
+<span class="ruby-ivar">@all_beers_count</span> = <span class="ruby-identifier">all_beers_count</span>
+<span class="ruby-ivar">@polish_beers_count</span> = <span class="ruby-identifier">polish_beers_count</span>
+<span class="ruby-ivar">@foreign_beers_count</span> = <span class="ruby-identifier">foreign_beers_count</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>]
+  <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;kraj != ?&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>)
+<span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;bottles&quot;</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;(komentarz LIKE ? OR komentarz LIKE ?) AND kraj NOT LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>)
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;komentarz NOT LIKE ? AND komentarz NOT LIKE ? AND kraj NOT LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">collator</span> = <span class="ruby-constant">ICU</span><span class="ruby-operator">::</span><span class="ruby-constant">Collation</span><span class="ruby-operator">::</span><span class="ruby-constant">Collator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;pl_PL&quot;</span>)
+
+<span class="ruby-ivar">@beers</span> = <span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> 
+  <span class="ruby-identifier">comp</span> = <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">brewery_name</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">brewery_name</span>)
+  <span class="ruby-identifier">comp</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nazwa</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">nazwa</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">comp</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">beer</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">beer</span> = <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-identifier">beer</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Kaminari</span>.<span class="ruby-identifier">paginate_array</span>(<span class="ruby-ivar">@beers</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">25</span>)
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- foreign-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- foreign-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 26</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+<span class="ruby-ivar">@all_beers_count</span> = <span class="ruby-identifier">all_beers_count</span>
+<span class="ruby-ivar">@polish_beers_count</span> = <span class="ruby-identifier">polish_beers_count</span>
+<span class="ruby-ivar">@foreign_beers_count</span> = <span class="ruby-identifier">foreign_beers_count</span>
+
+<span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>]
+              <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;bottles&quot;</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;komentarz LIKE ? OR komentarz LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>)
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;komentarz NOT LIKE ? AND komentarz NOT LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+            <span class="ruby-identifier">collator</span> = <span class="ruby-constant">ICU</span><span class="ruby-operator">::</span><span class="ruby-constant">Collation</span><span class="ruby-operator">::</span><span class="ruby-constant">Collator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;pl_PL&quot;</span>)
+
+            <span class="ruby-ivar">@beers</span> = <span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> 
+                    <span class="ruby-identifier">comp</span> = <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">brewery_name</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">brewery_name</span>)
+                    <span class="ruby-identifier">comp</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nazwa</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">nazwa</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">comp</span>
+            <span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">beer</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">beer</span> = <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-identifier">beer</span>)
+<span class="ruby-keyword">end</span>
+
+            <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Kaminari</span>.<span class="ruby-identifier">paginate_array</span>(<span class="ruby-ivar">@beers</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">25</span>)
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-polish" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">polish</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="polish-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 97</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">polish</span>
+<span class="ruby-ivar">@all_beers_count</span> = <span class="ruby-identifier">all_beers_count</span>
+<span class="ruby-ivar">@polish_beers_count</span> = <span class="ruby-identifier">polish_beers_count</span>
+<span class="ruby-ivar">@foreign_beers_count</span> = <span class="ruby-identifier">foreign_beers_count</span>
+
+            <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>]
+  <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">kraj</span><span class="ruby-operator">:</span> <span class="ruby-string">'pl'</span>)
+<span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:shown</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;bottles&quot;</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;(komentarz LIKE ? OR komentarz LIKE ?) AND kraj LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>)
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;komentarz NOT LIKE ? AND komentarz NOT LIKE ? AND kraj LIKE ?&quot;</span>, <span class="ruby-node">&quot;%#butelka%&quot;</span>, <span class="ruby-node">&quot;%#bottle%&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">collator</span> = <span class="ruby-constant">ICU</span><span class="ruby-operator">::</span><span class="ruby-constant">Collation</span><span class="ruby-operator">::</span><span class="ruby-constant">Collator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;pl_PL&quot;</span>)
+
+<span class="ruby-ivar">@beers</span> = <span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> 
+  <span class="ruby-identifier">comp</span> = <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">brewery_name</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">brewery_name</span>)
+  <span class="ruby-identifier">comp</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nazwa</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">nazwa</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">comp</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">beer</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">beer</span> = <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-identifier">beer</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Kaminari</span>.<span class="ruby-identifier">paginate_array</span>(<span class="ruby-ivar">@beers</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">25</span>)
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- polish-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- polish-method -->
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:term</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;nazwa LIKE ? OR barcode LIKE ? OR komentarz LIKE ?&quot;</span>, <span class="ruby-string">&quot;%&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:term</span>]<span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>, <span class="ruby-string">&quot;%&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:term</span>]<span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>,  <span class="ruby-string">&quot;%&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:term</span>]<span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>)
+
+    <span class="ruby-identifier">collator</span> = <span class="ruby-constant">ICU</span><span class="ruby-operator">::</span><span class="ruby-constant">Collation</span><span class="ruby-operator">::</span><span class="ruby-constant">Collator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;pl_PL&quot;</span>)
+
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">comp</span> = <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">brewery_name</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">brewery_name</span>)
+      <span class="ruby-identifier">comp</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">collator</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nazwa</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">nazwa</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">comp</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@beers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">beer</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">beer</span> = <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-identifier">beer</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@beers</span> = <span class="ruby-constant">Kaminari</span>.<span class="ruby-identifier">paginate_array</span>(<span class="ruby-ivar">@beers</span>).<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">per</span>(<span class="ruby-value">25</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- search-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- search-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+        <span class="ruby-ivar">@beer</span> = <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+        <span class="ruby-ivar">@beer</span> = <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@beer</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">beer_params</span>)
+                <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@beer</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">render</span> <span class="ruby-string">'edit'</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
+
+    
+      <div id="method-i-all_beers_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_beers_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="all_beers_count-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_beers_count</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_beers_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_beers_count-method -->
+
+    
+      <div id="method-i-beer_name_add_icons" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beer_name_add_icons</span><span
+            class="method-args">(beer)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="beer_name_add_icons-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">beer_name_add_icons</span>(<span class="ruby-identifier">beer</span>)
+  <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">icons</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">escaped_comment</span> = <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;'&quot;</span>, <span class="ruby-string">%q(\\)</span>)
+    <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">icons</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;&lt;img src='/assets/icons/comment.png' title='Comment: #{escaped_comment}' /&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">include?</span> <span class="ruby-node">&quot;#butelka&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">include?</span> <span class="ruby-node">&quot;#bottle&quot;</span>
+    <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">icons</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &lt;img src='/assets/icons/bottle.png' title='This beer is stored as a physical bottle' /&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">include?</span> <span class="ruby-node">&quot;#edycjalimitowana&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">komentarz</span>.<span class="ruby-identifier">include?</span> <span class="ruby-node">&quot;#limited&quot;</span>
+    <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">icons</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &lt;img src='/assets/icons/award_star_gold_2.png' title='This beer is a limited edition or an otherwise seasonal product' /&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">local_image</span>.<span class="ruby-identifier">url</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">foto</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">beer</span>.<span class="ruby-identifier">icons</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &lt;img src='/assets/icons/camera.png' title='This beer has a photo' /&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">beer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beer_name_add_icons-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beer_name_add_icons-method -->
+
+    
+      <div id="method-i-beer_params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beer_params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="beer_params-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 160</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">beer_params</span>
+                <span class="ruby-comment"># get brewery name</span>
+                <span class="ruby-identifier">brewery_name</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:beer</span>][<span class="ruby-value">:brewery_name</span>].<span class="ruby-identifier">strip</span>
+
+<span class="ruby-ivar">@new_brewery</span> = <span class="ruby-string">&quot;&quot;</span>
+
+                <span class="ruby-ivar">@brewery</span> = <span class="ruby-constant">Brewery</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;nazwa = '&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">brewery_name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;'&quot;</span>).<span class="ruby-identifier">first</span>
+
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@brewery</span>
+                        <span class="ruby-identifier">params</span>[<span class="ruby-value">:beer</span>][<span class="ruby-value">:brewery_id</span>] = <span class="ruby-ivar">@brewery</span>.<span class="ruby-identifier">id</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-ivar">@brewery</span> = <span class="ruby-constant">Brewery</span>.<span class="ruby-identifier">new</span>()
+                        <span class="ruby-ivar">@brewery</span>.<span class="ruby-identifier">nazwa</span> = <span class="ruby-identifier">brewery_name</span>
+                        <span class="ruby-ivar">@brewery</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-ivar">@new_brewery</span> = <span class="ruby-identifier">brewery_name</span>
+                        <span class="ruby-identifier">params</span>[<span class="ruby-value">:beer</span>][<span class="ruby-value">:brewery_id</span>] = <span class="ruby-ivar">@brewery</span>.<span class="ruby-identifier">id</span>
+                <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">require</span>(<span class="ruby-value">:beer</span>).<span class="ruby-identifier">permit</span>(<span class="ruby-value">:nazwa</span>, <span class="ruby-value">:komentarz</span>, <span class="ruby-value">:barcode</span>, <span class="ruby-value">:brewery_id</span>, <span class="ruby-value">:kraj</span>, <span class="ruby-value">:foto</span>, <span class="ruby-value">:local_image</span>)
+        <span class="ruby-keyword">end</span></pre>
+          </div><!-- beer_params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beer_params-method -->
+
+    
+      <div id="method-i-foreign_beers_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">foreign_beers_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="foreign_beers_count-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">foreign_beers_count</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;kraj != ?&quot;</span>, <span class="ruby-string">&quot;pl&quot;</span>).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- foreign_beers_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- foreign_beers_count-method -->
+
+    
+      <div id="method-i-polish_beers_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">polish_beers_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="polish_beers_count-source">
+            <pre><span class="ruby-comment"># File app/controllers/beers_controller.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">polish_beers_count</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Beer</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">kraj</span><span class="ruby-operator">:</span> <span class="ruby-string">'pl'</span>).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- polish_beers_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- polish_beers_count-method -->
+
+    
+    </section><!-- private-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

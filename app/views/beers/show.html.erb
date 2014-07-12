@@ -1,8 +1,14 @@
 <div class="media">
 
-<a class="pull-right" href="#">
-	<img class="media-object" src="http://placehold.it/250x350" />
-</a>
+<div class="pull-right">
+  <% if not @beer.local_image.url.nil? %>
+  <%= link_to image_tag(@beer.local_image_url(:thumb), :class => "media-object beer-image"), @beer.local_image.url, :data => {:lightbox => "image"} %>
+  <% elsif not @beer.foto.length < 1 %>
+  <%= link_to image_tag(@beer.foto, :class => "media-object beer-image"), @beer.foto, :data => {:lightbox => "image"} %>
+  <% else %>
+	<img class="media-object beer-image" src="http://placehold.it/250x350&text=No+photo" />  
+  <% end %>
+</div>
 
 <div class="page-header">
 	<h1><%= @beer.nazwa %></h1>
@@ -19,14 +25,14 @@
 <h2>Beer info:</h2>
 <p>
   <strong>Brewery:</strong>
-  <%= link_to @beer.brewery_name, brewery_path(@beer.brewery_id) %>
+  <%= link_to @beer.brewery_name, brewery_path(Brewery.find(@beer.brewery_id)) %>
 </p>
 <p>
 <strong>Country: </strong>
-<% if @beer.kraj == "_" or @beer.kraj.empty? %>
+<% if @beer.country == "_" or @beer.country.empty? %>
   <img style="vertical-align: baseline" src="/assets/flags/_.png" /> <em>Unavailable</em>
 <% else %>
-  <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.kraj %>.png" /> <%= IsoCountryCodes.find(@beer.kraj).name %> 
+  <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.country %>.png" /> <%= IsoCountryCodes.find(@beer.country).name %> 
 <%end>%>
 <p>
   <strong>Comment:</strong> <%= raw(@beer.icons) %><br/>

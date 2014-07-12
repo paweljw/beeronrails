@@ -19,8 +19,8 @@
       <td><%= beer.id %></td>
       <td><%= link_to beer.nazwa, beer_path(beer) %></td>
       <td><%= raw(beer.icons) %></td>
-      <td><%= link_to beer.brewery_name, brewery_path(beer.brewery_id) %></td>
-      <td><img src="/assets/flags/<%= beer.country %>.png" title="<%= IsoCountryCodes.find(beer.country).name %>" /></td>
+      <td><%= link_to beer.brewery_name, brewery_path(Brewery.find(beer.brewery_id)) %></td>
+      <td><img src="/assets/flags/<%= beer.country %>.png" <% unless beer.country == "_" %>title="<%= IsoCountryCodes.find(beer.country).name %>"<% end %> /></td>
     </tr>
   <% end %>
   <%end%>
