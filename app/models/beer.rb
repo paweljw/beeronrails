@@ -19,4 +19,21 @@ class Beer < ActiveRecord::Base
   		return @inner_brewery
   	end
   end
+
+  def country
+    if self.kraj.nil?
+      return "_"
+    end
+
+    unless self.kraj == "_"
+      return self.kraj
+    else
+      country = EanCountry.infer(self.barcode)
+      unless country.nil?
+        return country.downcase
+      else
+        return "_"
+      end
+    end
+  end
 end
