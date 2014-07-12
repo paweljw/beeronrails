@@ -22,7 +22,7 @@ gem 'ffi-icu'
 gem 'kaminari'
 gem 'iso_country_codes'
 gem 'ean-country'
-gem 'ruby-mysql'
+gem 'mysql2'
 gem 'yaml_db'
 
 # Use unicorn as the app server
