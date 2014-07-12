@@ -5,7 +5,7 @@ class Brewery < ActiveRecord::Base
 		beer = Beer.find(:first, :conditions => [ "brewery_id = ?", self.id ])
 
 		unless beer.nil?
-			return beer.kraj
+			return beer.country
 		else
 			return "_"
 		end

@@ -23,10 +23,10 @@
 </p>
 <p>
 <strong>Country: </strong>
-<% if @beer.kraj == "_" or @beer.kraj.empty? %>
+<% if @beer.country == "_" or @beer.country.empty? %>
   <img style="vertical-align: baseline" src="/assets/flags/_.png" /> <em>Unavailable</em>
 <% else %>
-  <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.kraj %>.png" /> <%= IsoCountryCodes.find(@beer.kraj).name %> 
+  <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.country %>.png" /> <%= IsoCountryCodes.find(@beer.country).name %> 
 <%end>%>
 <p>
   <strong>Comment:</strong> <%= raw(@beer.icons) %><br/>
