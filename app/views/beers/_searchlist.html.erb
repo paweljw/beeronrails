@@ -16,7 +16,7 @@
     <tr>
       <td><%= beer.id %></td>
       <td><%= link_to raw( beer.nazwa.sub params[:term], "<strong>"+params[:term]+"</strong>") , beer_path(beer) %> <%= raw(beer.icons) %></td>
-      <td><%= link_to beer.brewery_name, brewery_path(beer.brewery_id) %></td>
+      <td><%= link_to beer.brewery_name, brewery_path(Brewery.find(beer.brewery_id)) %></td>
       <td><img src="/assets/flags/<%= beer.country %>.png" /></td>
       <td><%= raw(beer.barcode.sub params[:term], "<strong>"+params[:term]+"</strong>") %></td>
     </tr>
