@@ -35,8 +35,12 @@
 
 img.denied-image
 {
--webkit-border-radius: 60px;
--moz-border-radius: 60px;
-border-radius: 60px;
-width: 500px;
+	-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+	border-radius: 60px;
+	width: 500px;
+}
+
+body {
+    margin-top: 100px !important;
 }
