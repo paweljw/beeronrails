@@ -10,6 +10,7 @@ class LocalImageUploader < CarrierWave::Uploader::Base
   end
 
   process :watermark
+  process :resize_to_fit => [850, 700]
 
   version :thumb do
      process :resize_to_fit => [350, 0]
