@@ -1,0 +1,2 @@
+Beeronrails::Application.config.user = "###"
+Beeronrails::Application.config.pass = "###"
