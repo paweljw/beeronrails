@@ -34,6 +34,9 @@
 <% else %>
   <img style="vertical-align: baseline" src="/assets/flags/<%= @beer.country %>.png" /> <%= IsoCountryCodes.find(@beer.country).name %> 
 <%end>%>
+</p>
+<p>
+<strong>Barcode: </strong> <em><%= @beer.barcode %>
 <p>
   <strong>Comment:</strong> <%= raw(@beer.icons) %><br/>
   <% if @beer.komentarz.empty? %>
