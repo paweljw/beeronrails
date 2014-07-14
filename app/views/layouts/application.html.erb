@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Beer On Rails</title>
+    <% if @beer %>
+        <title><%= @beer.nazwa %> from <%= @beer.brewery_name %> - Beer On Rails</title>
+    <% elsif @brewery %>
+        <title><%= @brewery.nazwa %> - Beer On Rails</title>
+    <% else %>
+        <title>Beer On Rails</title>
+    <%end%>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= csrf_meta_tags %>
     <meta name="author" content="Paweł J. Wal">
