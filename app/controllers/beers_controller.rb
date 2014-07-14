@@ -57,7 +57,22 @@ class BeersController < ApplicationController
 
   def search
     unless params[:term].nil?
-      @beers = Beer.where("nazwa LIKE ? OR barcode LIKE ? OR komentarz LIKE ?", "%"+params[:term]+"%", "%"+params[:term]+"%",  "%"+params[:term]+"%")
+      if params[:term].include? "country:"
+        country = params[:term].gsub("country:", "")
+        brew_temp = Beer.all
+        @beers = Array.new
+
+        puts "beers search"
+        puts country
+
+        brew_temp.each do |beer|
+          if beer.country.to_s.include? country
+            @beers.push(beer)
+          end
+        end
+      else
+        @beers = Beer.where("nazwa LIKE ? OR barcode LIKE ? OR komentarz LIKE ?", "%"+params[:term]+"%", "%"+params[:term]+"%",  "%"+params[:term]+"%")
+      end
 
       collator = ICU::Collation::Collator.new("pl_PL")
 
