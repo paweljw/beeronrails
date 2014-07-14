@@ -44,7 +44,8 @@ class BeersController < ApplicationController
 
 		@beers = @beers.sort! do |a, b| 
 			comp = collator.compare(a.brewery_name, b.brewery_name)
-			comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+			comp = comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      comp.zero? ? a.id <=> b.id : comp
 		end
 
     @beers.each do |beer|
@@ -60,9 +61,10 @@ class BeersController < ApplicationController
 
       collator = ICU::Collation::Collator.new("pl_PL")
 
-      @beers = @beers.sort! do |a, b| 
+      @beers.sort! do |a, b| 
         comp = collator.compare(a.brewery_name, b.brewery_name)
-        comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+        comp = comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+        comp.zero? ? a.id <=> b.id : comp
       end
 
       @beers.each do |beer|
@@ -115,7 +117,8 @@ class BeersController < ApplicationController
 
     @beers = @beers.sort! do |a, b| 
       comp = collator.compare(a.brewery_name, b.brewery_name)
-      comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      comp = comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      comp.zero? ? a.id <=> b.id : comp
     end
 
     @beers.each do |beer|
@@ -146,7 +149,8 @@ class BeersController < ApplicationController
 
     @beers = @beers.sort! do |a, b| 
       comp = collator.compare(a.brewery_name, b.brewery_name)
-      comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      comp = comp.zero? ? collator.compare(a.nazwa, b.nazwa) : comp
+      comp.zero? ? a.id <=> b.id : comp
     end
 
     @beers.each do |beer|
