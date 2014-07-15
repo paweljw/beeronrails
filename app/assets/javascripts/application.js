@@ -14,6 +14,28 @@
 //= require jquery_ujs
 //= require_tree .
 
+function highlightOverId()
+{
+	if(typeof $.cookie('overId') == undefined)
+		return;
+
+	var comp = parseInt($.cookie('overId'));
+
+	$(".beer-id").each(function(ix, elm) {
+    	a = parseInt($(elm).text());
+    	console.log(a);
+    	if (a > comp)
+    		$(elm).addClass("beer-id-over");
+    });
+}
+
+function undoHighlightOverId()
+{
+	$(".beer-id-over").each(function(ix, elm) {
+    	$(elm).removeClass("beer-id-over");
+    });
+}
+
 $(function() {
 	$( "#browar" ).autocomplete({
 	        source: "/breweries/autocomplete",
@@ -21,5 +43,43 @@ $(function() {
 
     $('#shown').change(function() {
         this.form.submit();
+    });
+
+    if(typeof $.cookie('showOverId') == undefined)
+    {
+    	$.cookie('showOverId', 'false', {expires: 360});
+    	$.cookie('overId', '0', {expires: 360});
+    }
+
+    if($.cookie('showOverId') == 'true')
+    	highlightOverId();
+    
+    $(document).keypress( function(event) 
+    {
+    	if(event.shiftKey)
+    	{
+    		if(event.which == 123)
+    		{
+    			$.cookie('showOverId', 'true', {expires: 360});
+    			highlightOverId();
+    		}
+
+    		if(event.which == 125)
+    		{
+    			$.cookie('showOverId', 'false', {expires: 360});
+    			undoHighlightOverId();
+    		}
+
+    		if(event.which == 124)
+    		{
+    			$.cookie('showOverId', 'true', {expires: 360});
+    			val = prompt("Highlight beers over this ID:", $.cookie("overId"));
+    			if(val != null)
+    			{
+    				$.cookie('overId', val, {expires: 360});
+    				highlightOverId();
+    			}
+    		}
+    	}	
     });
 });
