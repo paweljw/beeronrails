@@ -20,3 +20,4 @@
 # Ignore database configs
 /config/database.yml
 /public/uploads/*
+/public/assets/*
