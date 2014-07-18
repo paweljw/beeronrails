@@ -5,6 +5,8 @@ class UnAuth < StandardError; end
 
 # Application controller
 class ApplicationController < ActionController::Base
+  before_filter :setup_gitid
+
   protect_from_forgery
 
   rescue_from ActionController::RoutingError, :with => :render_404
@@ -28,6 +30,10 @@ class ApplicationController < ActionController::Base
 	    end
 	  end
 	end
+
+  def setup_gitid
+    @githeadid = Beeronrails::Application.config.gitid
+  end
 	
  private
   # Renders my 404 message

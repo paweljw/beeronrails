@@ -26,7 +26,15 @@ gem 'mysql2'
 gem 'yaml_db'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'newrelic_rpm'
+gem 'grit'
+
+group :production do
+	gem 'newrelic_rpm'
+end
+
+# this needs to be 5.0 for rails 4.1
+gem 'minitest', '4.7.5'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
