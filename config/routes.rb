@@ -1,4 +1,8 @@
 Beeronrails::Application.routes.draw do
+  get "about/index"
+
+  get "about", to: "about#index"
+  
   get "beer/index"
   get "beer/denied"
 
