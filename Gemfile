@@ -27,6 +27,7 @@ gem 'yaml_db'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'grit'
+gem 'sitemap'
 
 group :production do
 	gem 'newrelic_rpm'
