@@ -180,9 +180,9 @@ class BeersController < ApplicationController
   			# get brewery name
   			brewery_name = params[:beer][:brewery_name].strip
 
-        @new_brewery = ""
+		        @new_brewery = ""
 
-  			@brewery = Brewery.where("nazwa = '" + brewery_name + "'").first
+  			@brewery = Brewery.where("nazwa = ?", brewery_name).first
 
   			if @brewery
   				params[:beer][:brewery_id] = @brewery.id
@@ -190,7 +190,7 @@ class BeersController < ApplicationController
   				@brewery = Brewery.new()
   				@brewery.nazwa = brewery_name
   				@brewery.save
-          @new_brewery = brewery_name
+			          @new_brewery = brewery_name
   				params[:beer][:brewery_id] = @brewery.id
   			end
 

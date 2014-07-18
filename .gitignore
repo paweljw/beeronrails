@@ -21,3 +21,4 @@
 /config/database.yml
 /public/uploads/*
 /public/sitemap.xml
+/public/assets/*

@@ -23,7 +23,6 @@ function highlightOverId()
 
 	$(".beer-id").each(function(ix, elm) {
     	a = parseInt($(elm).text());
-    	console.log(a);
     	if (a > comp)
     		$(elm).addClass("beer-id-over");
     });
