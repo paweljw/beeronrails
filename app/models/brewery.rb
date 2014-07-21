@@ -1,6 +1,8 @@
 class Brewery < ActiveRecord::Base
 	attr_accessible :nazwa
 
+	validates :nazwa, presence: true
+
 	def country
 		beer = Beer.find(:first, :conditions => [ "brewery_id = ?", self.id ])
 
