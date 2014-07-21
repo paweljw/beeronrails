@@ -79,6 +79,12 @@ $(function() {
     				highlightOverId();
     			}
     		}
-    	}	
+    	}
+
+	if(event.ctrlKey && event.which == 106)
+	{ 
+		console.log(event.which);	
+		return false;
+}
     });
 });
